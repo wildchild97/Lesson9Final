@@ -1,12 +1,13 @@
 import TerminalIO.*;
 import TurtleGraphics.*;
+import java.awt.Color;
 
 
 public class ShapeMaker {
 
     public static void main(String[] args) {
         Shape sl;
-        Pen p= new StandardPen();
+        Pen p= new StandardPen(new SketchPadWindow(400,400));
         double r,x,y;
         double w,h;
         int choice;
@@ -40,7 +41,9 @@ public class ShapeMaker {
             
             p.setColor(Color.white);
             sl.draw(p);
-            
+            sl.move(x, y);
+            p.setColor(Color.blue);
+            sl.draw(p);
         }
         
     }
