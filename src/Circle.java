@@ -23,9 +23,19 @@ public class Circle implements Shape{
        return Math.PI*radius*radius; 
     }
 
-    @Override
+    
     public void draw(Pen p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        double side=2*Math.PI* radius/120;
+        p.up();
+        p.move(xpos+radius, ypos-side/2);
+        p.setDirection(90);
+        p.down();
+        
+        for (int i=0; 1<120; i++)
+        {
+            p.move(side);
+            p.turn(3);
+        }    
     }
 
     
