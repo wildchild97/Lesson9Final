@@ -21,13 +21,13 @@ public class ShapeMaker {
         }
         if (choice==1)
         {
-            w=k.readDouble("Enter width of Rectangle");
-            h=k.readDouble("Enter the height of Rectangle");
+            w=k.readDouble("Enter width of Rectangle ");
+            h=k.readDouble("Enter the height of Rectangle ");
             sl=new Rect (0,0,w,h);
         }
         else
         {
-            r=k.readDouble ("Enter radius of Circle");
+            r=k.readDouble ("Enter radius of Circle ");
             sl=new Circle(0,0,r);
         }
         
