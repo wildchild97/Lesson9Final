@@ -1,51 +1,19 @@
-import TerminalIO.*;
-import TurtleGraphics.*;
-import java.awt.Color;
-
-
 public class ShapeMaker {
 
     public static void main(String[] args) {
-        Shape sl;
-        Pen p= new StandardPen(new SketchPadWindow(400,400));
-        double r,x,y;
-        double w,h;
-        int choice;
-        KeyboardReader k= new KeyboardReader();
-        
-        //pick circle or rectangle
-        while(true)
-        {
-            choice=k.readInt("Enter 1 for Rectangle, or 2 for Circle: ");
-            if (choice==1 || choice==2) break;
-        }
-        if (choice==1)
-        {
-            w=k.readDouble("Enter width of Rectangle ");
-            h=k.readDouble("Enter the height of Rectangle ");
-            sl=new Rect (0,0,w,h);
-        }
-        else
-        {
-            r=k.readDouble ("Enter radius of Circle ");
-            sl=new Circle(0,0,r);
-        }
-        
-        while(true)
-        {
-            sl.draw(p);
-            x=k.readDouble("New x: ");
-            y=k.readDouble("New y: ");
-            
-            //erase and move
-            
-            p.setColor(Color.white);
-            sl.draw(p);
-            sl.move(x, y);
-            p.setColor(Color.blue);
-            sl.draw(p);
-        }
+       Rect rect;
+       Shape shape1, shape2, shape3;
+       rect=new Rect(1,1,4,6);
+       
+       shape1= makeOneShapeFromAnother (rect, "circle");
+       shape2= makeOneShapeFromAnother (rect, "rectangle");
+       shape3= makeOneShapeFromAnother (rect, "wheel");
+       
+       System.out.println("\nRectangle Area: " + rect.area() + "\nCircle Area: " + shape1.area() + "\nRectangle Area: " + shape2.area() + "\nWheel Area: " + shape3.area());
+
+     }
+    static private shape makeOneShapeFromAnother (Shape inShape, String type)
+    {
         
     }
-    
 }
