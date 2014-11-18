@@ -197,7 +197,7 @@ public class ShapesGUI extends javax.swing.JFrame {
         erase();
         s.move(x, y);
         s.draw(p);
-        txtinfoe.setText(s.toString());
+        txtinfo.setText(s.toString());
     }//GEN-LAST:event_btnmoveActionPerformed
 
     /**
