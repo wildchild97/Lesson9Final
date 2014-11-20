@@ -1,8 +1,8 @@
 import TurtleGraphics.Pen;
 
-abstract public class AbstractShape 
+abstract public class AbstractShape implements Shape
 {
-  protected double  xpos,ypos;
+  protected double  xpos,ypos,perimeter;
   
   public AbstractShape()
   {
@@ -16,12 +16,12 @@ abstract public class AbstractShape
       ypos=y;
   }
   
-  public final double getXpos()
+  public final double getYpos()
   {
       return xpos;           
   }
   
-  public final double getYpos()
+  public final double getXpos()
   {
       return ypos;
   }
@@ -32,12 +32,16 @@ abstract public class AbstractShape
         ypos=yloc;  
     }
     
+    public final double Perimeter()
+    {
+        return perimeter;
+    }
     public String toString()
     {
         String str="X-Y Position=" + xpos + "," + ypos;
         str+= "\nArea=" + area();
+        str+="\nPerimeter=" + Perimeter();
         return str;
     }
      
-    
 }

@@ -4,7 +4,7 @@ import TurtleGraphics.Pen;
 
 public class Rect extends AbstractShape{
     
-    private double width, height;
+    private double width, height, perimeter;
 
     public Rect()
     {
@@ -40,10 +40,16 @@ public class Rect extends AbstractShape{
     }
 
    
-    public void stretchyBy(double factor) {
+    public void stretchBy(double factor) {
         height*=factor;
         width*=factor;
                 
+    }
+    
+     public double Perimeter()
+    {
+        return width*height;
+        
     }
     
     public String toString()

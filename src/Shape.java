@@ -6,6 +6,6 @@ public interface Shape {
     public double xpos();
     public double ypos();
     public void move(double xloc, double yloc);
-    public void stretchyBy(double factor);
+    public void stretchBy(double factor);
     public String toString();
 }

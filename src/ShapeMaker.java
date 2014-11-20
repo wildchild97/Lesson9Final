@@ -16,8 +16,8 @@ public class ShapeMaker {
     {
         Shape outShape;
         double area,radius,width,height;
-        double x=inShape.getXpos();
-        double y=inShape.getYpos();
+        double x=inShape.xpos();
+        double y=inShape.ypos();
         area=inShape.area();
         
         if(type.equals("circle"))
@@ -35,6 +35,6 @@ public class ShapeMaker {
             radius=Math.sqrt(area/Math.PI);
             outShape=new Wheel(x,y,radius,6);
         }
-        return outShape
+        return outShape;
     }
 }
