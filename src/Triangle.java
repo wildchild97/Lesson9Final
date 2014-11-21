@@ -1,13 +1,13 @@
 import TurtleGraphics.Pen;
 
 public class Triangle extends AbstractShape{
-     private double base,height,x1,y1,x2,y2;
+     private double base,height,x2,y2,x3,y3;
     
     
     
     public double area() 
     {
-        return (base*height)/2;
+        Math.abs((xpos*y2-x2*ypos) + (x2*y3-x3*y2) + (x3*ypos-xpos*y3))/2;
     }
 
     public void draw(Pen p) 
