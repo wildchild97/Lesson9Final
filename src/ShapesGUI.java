@@ -13,6 +13,9 @@ public class ShapesGUI extends javax.swing.JFrame {
         w.setLocation(50,275);
         p= new  StandardPen(w);
         s= new Circle(0,0,0);
+        s= new Wheel(0,0,0,0);
+        s= new Rect(0,0,0,0);
+        s= new Triangle();
     }
 
     /**
@@ -54,10 +57,25 @@ public class ShapesGUI extends javax.swing.JFrame {
         });
 
         btnwheel.setText("Wheel");
+        btnwheel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnwheelActionPerformed(evt);
+            }
+        });
 
         btnrect.setText("Rectangle");
+        btnrect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnrectActionPerformed(evt);
+            }
+        });
 
         btntriangle.setText("Triangle");
+        btntriangle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btntriangleActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -96,6 +114,11 @@ public class ShapesGUI extends javax.swing.JFrame {
         });
 
         btnresize.setText("Resize");
+        btnresize.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnresizeActionPerformed(evt);
+            }
+        });
 
         btnquit.setText("Quit");
 
@@ -180,9 +203,9 @@ public class ShapesGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     private void erase()
     {
-        p.setColor(Color.WHITE);
+        p.setColor(java.awt.Color.white);
         s.draw(p);
-        p.setColor(Color.BLUE);
+        p.setColor(java.awt.Color.blue);
     }
     private void btncircleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncircleActionPerformed
         erase();
@@ -199,6 +222,36 @@ public class ShapesGUI extends javax.swing.JFrame {
         s.draw(p);
         txtinfo.setText(s.toString());
     }//GEN-LAST:event_btnmoveActionPerformed
+
+    private void btnwheelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnwheelActionPerformed
+        erase();
+        s=new Wheel(0,0,50,5);
+        s.draw(p);
+        txtinfo.setText(s.toString());
+    }//GEN-LAST:event_btnwheelActionPerformed
+
+    private void btnrectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrectActionPerformed
+        erase();
+        s=new Rect(0,0,20,50);
+        s.draw(p);
+        txtinfo.setText(s.toString());
+    }//GEN-LAST:event_btnrectActionPerformed
+
+    private void btntriangleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntriangleActionPerformed
+         erase();
+        s=new Triangle(0,0,20,50);
+        s.draw(p);
+        txtinfo.setText(s.toString());
+    }//GEN-LAST:event_btntriangleActionPerformed
+
+    private void btnresizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnresizeActionPerformed
+        double x=Double.parseDouble(JOptionPane.showInputDialog(this,"Enter new x","0"));
+        double y=Double.parseDouble(JOptionPane.showInputDialog(this,"Enter new y","0"));
+        erase();
+        s.strechBy(x);
+        s.draw(p);
+        txtinfo.setText(s.toString());
+    }//GEN-LAST:event_btnresizeActionPerformed
 
     /**
      * @param args the command line arguments

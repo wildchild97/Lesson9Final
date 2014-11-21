@@ -16,6 +16,8 @@ abstract public class AbstractShape implements Shape
       ypos=y;
   }
   
+ public abstract double Perimeter();
+ 
   public final double getYpos()
   {
       return xpos;           
@@ -26,16 +28,13 @@ abstract public class AbstractShape implements Shape
       return ypos;
   }
   
-    public final void move(double xloc, double yloc)
+    public void move(double xloc, double yloc)
     {
         xpos=xloc;
         ypos=yloc;  
     }
     
-    public final double Perimeter()
-    {
-        return perimeter;
-    }
+   
     public String toString()
     {
         String str="X-Y Position=" + xpos + "," + ypos;

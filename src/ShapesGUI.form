@@ -138,16 +138,25 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Wheel"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnwheelActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnrect">
           <Properties>
             <Property name="text" type="java.lang.String" value="Rectangle"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnrectActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btntriangle">
           <Properties>
             <Property name="text" type="java.lang.String" value="Triangle"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btntriangleActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -199,6 +208,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Resize"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnresizeActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnquit">
           <Properties>

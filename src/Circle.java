@@ -40,10 +40,6 @@ public class Circle extends AbstractShape{
         }    
     }
 
-    public double Perimeter()
-    {
-      return Math.PI*2*radius;  
-    }
     public String toString()
     {
         String result="This is a Circle\n";
