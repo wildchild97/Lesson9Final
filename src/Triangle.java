@@ -15,21 +15,9 @@ public class Triangle extends AbstractShape{
         p.up();
         p.move(xpos,ypos);
         p.down();
-        p.move(x1,y1);
         p.move(x2,y2);
+        p.move(x3,y3);
         p.move(xpos,ypos);
-    }
-
-    @Override
-    public double xpos() 
-    {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public double ypos()
-    {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
