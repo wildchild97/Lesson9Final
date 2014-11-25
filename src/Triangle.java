@@ -7,7 +7,7 @@ public class Triangle extends AbstractShape{
     
     public double area() 
     {
-        Math.abs((xpos*y2-x2*ypos) + (x2*y3-x3*y2) + (x3*ypos-xpos*y3))/2;
+       return Math.abs((xpos*y2-x2*ypos) + (x2*y3-x3*y2) + (x3*ypos-xpos*y3))/2;
     }
 
     public void draw(Pen p) 
@@ -20,6 +20,11 @@ public class Triangle extends AbstractShape{
         p.move(xpos,ypos);
     }
 
+    public void Perimeter()
+    {
+        x2=(x2-xpos)*factor + xpos
+    }
+   
     @Override
     public void stretchBy(double factor)
     {
