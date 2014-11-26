@@ -1,8 +1,8 @@
 import TurtleGraphics.Pen;
 
-abstract public class AbstractShape implements Shape
+public abstract class AbstractShape implements Shape
 {
-  protected double  xpos,ypos,perimeter;
+  protected double  xpos,ypos;
   
   public AbstractShape()
   {
