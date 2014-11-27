@@ -13,7 +13,8 @@ public class ShapesGUI extends javax.swing.JFrame {
         w.setLocation(50,275);
         p= new  StandardPen(w);
         s= new Circle(0,0,0);
-        s=new Rect(0,0,0,0);
+        //s=new Rect(0,0,0,0);
+       // s=new Triangle();
     }
 
     /**
