@@ -36,7 +36,7 @@ public class EmpGUI extends javax.swing.JFrame {
         btnadd = new javax.swing.JButton();
         btnquit = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblemployee = new javax.swing.JTable();
+        tblemp = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         lbltotal = new javax.swing.JLabel();
 
@@ -107,7 +107,7 @@ public class EmpGUI extends javax.swing.JFrame {
 
         btnquit.setText("Quit");
 
-        tblemployee.setModel(new javax.swing.table.DefaultTableModel(
+        tblemp.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -132,11 +132,11 @@ public class EmpGUI extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tblemployee.getTableHeader().setReorderingAllowed(false);
-        jScrollPane2.setViewportView(tblemployee);
-        if (tblemployee.getColumnModel().getColumnCount() > 0) {
-            tblemployee.getColumnModel().getColumn(0).setResizable(false);
-            tblemployee.getColumnModel().getColumn(1).setResizable(false);
+        tblemp.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(tblemp);
+        if (tblemp.getColumnModel().getColumnCount() > 0) {
+            tblemp.getColumnModel().getColumn(0).setResizable(false);
+            tblemp.getColumnModel().getColumn(1).setResizable(false);
         }
 
         jLabel4.setText("Total Pay");
@@ -233,8 +233,24 @@ public class EmpGUI extends javax.swing.JFrame {
            return;
        }
        
+       if (type.equals("FT"))
+           temp =new FullTimeEmployee();
        
-           
+       else
+           temp=new PartTimeEmployee();
+       
+       if (temp.setName(nm) && temp.setHours(hours) && temp.setRate(rate))
+       {
+           emp[size]=temp;
+           tblemp.setValueAt(temp.getName(), size, 0);
+           tblemp.setValueAt(nf.format(temp.getPay()),size,1);
+           size++;
+           lbltotal.setText(nf.format(Employee.getTotalPay()));
+           clearform();
+           return;
+       }
+       
+       if(temp.setName(nm)==false) error+="Name: " + Employee.getNameRules()+"\n";
         
     }//GEN-LAST:event_btnaddActionPerformed
 
@@ -288,7 +304,7 @@ public class EmpGUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel lbltotal;
-    private javax.swing.JTable tblemployee;
+    private javax.swing.JTable tblemp;
     private javax.swing.JTextField txthours;
     private javax.swing.JTextField txtname;
     private javax.swing.JTextField txtrate;
