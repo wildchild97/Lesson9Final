@@ -48,7 +48,7 @@ public class Rect extends AbstractShape{
     
      public double Perimeter()
     {
-        return width*height*2;
+        return (width+height)*2;
         
     }
     
