@@ -27,13 +27,14 @@ public class Circle extends AbstractShape{
     }
             
     public void draw(Pen p) {
+       
         double side=2*Math.PI* radius/120;
         p.up();
         p.move(xpos+radius, ypos-side/2);
         p.setDirection(90);
         p.down();
         
-        for (int i=0; 1<120; i++)
+        for (int i=0;i<120; i++)
         {
             p.move(side);
             p.turn(3);

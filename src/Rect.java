@@ -55,7 +55,7 @@ public class Rect extends AbstractShape{
     public String toString()
     {
         String result="This is a Rectangle\n";
-        result+="Width: " + width + "\tHeight" + height + "\n";
+        result+="Width: " + width + "\tHeight" + height;
         result+="\n"+ super.toString();
         return result;
     }

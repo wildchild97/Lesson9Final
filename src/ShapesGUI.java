@@ -13,8 +13,8 @@ public class ShapesGUI extends javax.swing.JFrame {
         w.setLocation(50,275);
         p= new  StandardPen(w);
         s= new Circle(0,0,0);
-        //s=new Rect(0,0,0,0);
-       // s=new Triangle();
+        s=new Rect(0,0,0,0);
+        s=new Triangle();
     }
 
     /**
@@ -226,7 +226,7 @@ public class ShapesGUI extends javax.swing.JFrame {
 
     private void btnwheelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnwheelActionPerformed
         erase();
-        s=new Wheel(0,0,50,5);
+        s=new Wheel(0,0,50,6);
         s.draw(p);
         txtinfo.setText(s.toString());
     }//GEN-LAST:event_btnwheelActionPerformed

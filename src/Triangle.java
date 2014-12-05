@@ -6,10 +6,10 @@ public class Triangle extends AbstractShape{
     public Triangle()
     {
         super();
-        x2=50;
-        y2=50;
+        x2=100;
+        y2=100;
         x3=-50;
-        y3=-50;
+        y3=-100;
         xd=0;
         yd=0;
     }
@@ -51,16 +51,16 @@ public class Triangle extends AbstractShape{
    
     public void stretchBy(double factor)
     {
-       x2=(x2-xpos)*factor + xpos;
-       y2=(y2-ypos)*factor + ypos;
-       x3=(x3-xpos)*factor + xpos;
-       y3=(y3-ypos)*factor + ypos;
+       x2=(x2-xpos)*factor + xd;
+       y2=(y2-ypos)*factor + yd;
+       x3=(x3-xpos)*factor + xd;
+       y3=(y3-ypos)*factor + yd;
     }
     
      public String toString()
     {
         String result="This is a Triangle\n";
-        result+="\n"+ super.toString();
+        result+=super.toString();
         return result;
     }
 }
