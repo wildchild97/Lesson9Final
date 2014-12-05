@@ -106,6 +106,11 @@ public class EmpGUI extends javax.swing.JFrame {
         });
 
         btnquit.setText("Quit");
+        btnquit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnquitActionPerformed(evt);
+            }
+        });
 
         tblemp.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -216,6 +221,14 @@ public class EmpGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void clearform()
+    {
+       txtname.setText("" );
+       txtrate.setText("");
+       txthours.setText("");
+       buttonGroup1.clearSelection();
+    }
+    
     private void btnaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddActionPerformed
        Employee temp;
        String nm, type;
@@ -249,10 +262,17 @@ public class EmpGUI extends javax.swing.JFrame {
            clearform();
            return;
        }
-       
+       String error="";
        if(temp.setName(nm)==false) error+="Name: " + Employee.getNameRules()+"\n";
+       if(temp.setHours(hours)==false) error+="Hours: " + Employee.getHourRules()+"\n";
+       if(temp.setRate(rate)==false) error+="Rate: " + Employee.getRateRules()+"\n";
+       JOptionPane.showMessageDialog(this, "error");
         
     }//GEN-LAST:event_btnaddActionPerformed
+
+    private void btnquitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnquitActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnquitActionPerformed
 
     /**
      * @param args the command line arguments
